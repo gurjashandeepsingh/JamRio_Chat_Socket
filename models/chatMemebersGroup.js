@@ -7,7 +7,8 @@ import db from "../dbConfig/dbconfig.js";
 
 const chatMemberGroupModel = db.define(`chatMemberGroup`, {
     chatId: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false,
         // type: DataTypes.INTEGER,
         // references:{
         //     model: `chat`,
@@ -15,7 +16,8 @@ const chatMemberGroupModel = db.define(`chatMemberGroup`, {
         // }
     },
     userId: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false,
         // type: DataTypes.INTEGER,
         // references: {
         //     model: `user`,

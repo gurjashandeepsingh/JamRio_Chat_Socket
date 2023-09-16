@@ -1,23 +1,25 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
 import db from "../dbConfig/dbconfig.js";
 
-export const messageModel = db.define("message", {
+const messageModel = db.define("message", {
     sender: {
-        type: DataTypes.INTEGER.UNSIGNED
+        type: DataTypes.STRING,
+        allowNull: false,
         // type: DataTypes.INTEGER,
         // references: {
         //     model: "user",
         //     key: "id"
         // }
     },
-    receiver: {
-        type: DataTypes.INTEGER.UNSIGNED
-        // type: DataTypes.INTEGER,
-        // references: {
-        //     model: "user",
-        //     key: "id"
-        // }
-    },
+    // receiver: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //     // type: DataTypes.INTEGER,
+    //     // references: {
+    //     //     model: "user",
+    //     //     key: "id"
+    //     // }
+    // },
     /**Ask what will be the content and content type for different types of data i.e image, doc */
     content: {
         type: DataTypes.STRING
@@ -26,7 +28,8 @@ export const messageModel = db.define("message", {
         type: DataTypes.STRING
     },
     chatId: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false,
         // type: DataTypes.INTEGER,
         // references: {
         //     model: `chats`,
@@ -42,3 +45,5 @@ export const messageModel = db.define("message", {
 },
     {timestamps: true}
 );
+
+export default messageModel;

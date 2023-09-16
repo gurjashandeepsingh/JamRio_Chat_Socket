@@ -4,9 +4,11 @@ import db from "../dbConfig/dbconfig.js";
 const chatModel = db.define(`chat`, {
     chatName: {
         type: DataTypes.STRING,
+        // allowNull: false,
     },
     isGroupChat: {
-        type: DataTypes.BOOLEAN
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
     },
     groupAdmin: {
         type: DataTypes.STRING

@@ -3,7 +3,8 @@ import db from "../dbConfig/dbconfig.js";
 
 const readByModel = db.define(`readBy`, {
     messageId: {
-        type: DataTypes.INTEGER.UNSIGNED
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: false,
         // type: DataTypes.INTEGER,
         // references: {
         //     model: `message`,
@@ -11,7 +12,8 @@ const readByModel = db.define(`readBy`, {
         // }
     },
     userId: {
-        type: DataTypes.INTEGER.UNSIGNED
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: false,
         // type: DataTypes.INTEGER,
         // references: {
         //     model: `user`,

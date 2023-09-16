@@ -3,7 +3,8 @@ import db from "../dbConfig/dbconfig.js";
 
 const chatMemberModel = db.define(`chatMember`,{
     chatId: {
-        type: DataTypes.INTEGER.UNSIGNED
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: false,
         // type: DataTypes.INTEGER,
         // references: {
         //     model: `chat`,
@@ -11,7 +12,8 @@ const chatMemberModel = db.define(`chatMember`,{
         // }
     },
     userId: {
-        type: DataTypes.INTEGER.UNSIGNED
+        type: DataTypes.INTEGER.UNSIGNED,
+        allowNull: false,
         // type: DataTypes.INTEGER,
         // references: {
         //     model: `user`,
